@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="FREE REST API">
+    <meta name="robots" content="archive, follow, imageindex, index, odp, snippet, translate">
+    <meta name="author" content="DappaUhuy">
+    <title>DapUhy - API</title>
+    <meta property="og:site_name" name="og:site_name" content="DapUhy APIs">
+    <meta property="og:title" name="og:title" content="DapUhy - REST APIs">
+    <meta property="og:url" name="og:url" content="https://dapuhy-api.herokuapp.com/">
+    <meta property="og:image" name="og:image" content="/assets/images/logo.png">
+    <meta property="og:description" name="og:description" content="FREE REST API">
+    <link rel="stylesheet" href="/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="shortcut icon" href="/assets/images/logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                <div class="nav-profile-img">
+                  <img src="/assets/images/logo.png" alt="image">
+                  <span class="availability-status online"></span>
+                </div>
+                <div class="nav-profile-text">
+                  <p class="mb-1 text-black">Guest</p>
+                </div>
+              </a>
+              <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item" href="/login">
+                  <i class="mdi mdi-login mr-2 text-success"></i> Login </a>
+              </div>
+            </li>
+            <li class="nav-item d-none d-lg-block full-screen-link">
+              <a class="nav-link">
+                <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                <i class="mdi mdi-bell-outline"></i>
+                <span class="count-symbol bg-danger"></span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                <h6 class="p-3 mb-0">Notifications</h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-success">
+                      <i class="mdi mdi-calendar"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject font-weight-normal mb-1">Ganti Template.</h6>
+                    <p class="text-gray ellipsis mb-0"> Change Template. </p>
+                  </div>
+                </a>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <div class="container-fluid page-body-wrapper">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item nav-profile">
+              <a class="nav-link">
+                <div class="nav-profile-image">
+                  <img src="/assets/images/logo.png" alt="profile">
+                  <span class="login-status online"></span>
+                </div>
+                <div class="nav-profile-text d-flex flex-column">
+                  <span class="font-weight-bold mb-2">Guest</span>
+                  <span class="text-secondary text-small">Guest</i></span>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <span class="menu-title">Dashboard</span>
+                <i class="mdi mdi-home menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-islam" aria-expanded="false" aria-controls="ui-islam">
+              <span class="menu-title">Islam API</span>
+              <i class="menu-arrow"></i>
+              <i class="mdi mdi-islam menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-islam">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/islam/tahlil?apikey=beta">Tahlil</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/islam/wirid?apikey=beta">Wirid</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/islam/ayatkursi?apikey=beta">AyatKursi</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/islam/doaharian?apikey=beta">Doa Harian</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/islam/bacaanshalat?apikey=beta">Bacaan Shalat</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/islam/niatshalat?apikey=beta">Niat Shalat</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/islam/asmaulhusna?apikey=beta">Asmaul Husna</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/islam/kisahnabi?nabi=muhammad&apikey=beta">Kisah Nabi</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/islam/alquran?apikey=beta">Alquran</a></li>
+              </ul>
+            </div>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-oxy" aria-expanded="false" aria-controls="ui-oxy">
+              <span class="menu-title">Photooxy API</span>
+              <i class="menu-arrow"></i>
+              <i class="mdi mdi-text-shadow menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-oxy">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/shadow?text=DappaUhuy&apikey=beta">Shadow Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/romantic?text=DappaUhuy&apikey=beta">Romantic Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/smoke?text=DappaUhuy&apikey=beta">Smoke Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/burnpaper?text=DappaUhuy&apikey=beta">BurnPaper Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/lovemessage?text=DappaUhuy&apikey=beta">LoveMessage Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/undergrass?text=DappaUhuy&apikey=beta">UnderGrass Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/doubleheart?text=DappaUhuy&apikey=beta">DoubleHeart Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/coffecup?text=DappaUhuy&apikey=beta">CoffeCup Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/coffecup2?text=DappaUhuy&apikey=beta">CoffeCup2 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/butterfly?text=DappaUhuy&apikey=beta">Butterfly Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/cup?text=DappaUhuy&apikey=beta">Cup Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/cup2?text=DappaUhuy&apikey=beta">Cup2 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/wolfmetal?text=DappaUhuy&apikey=beta">WolfMetal Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/underwater?text=DappaUhuy&apikey=beta">UnderWater Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/roses?text=DappaUhuy&apikey=beta">Roses Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/whitecube?text=DappaUhuy&apikey=beta">WhiteCube Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/nightsky?text=DappaUhuy&apikey=beta">NightSky Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/flaming?text=DappaUhuy&apikey=beta">Flaming Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/naruto?text=DappaUhuy&apikey=beta">Naruto Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/csgobanner?text=DappaUhuy&apikey=beta">CsgoBanner Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/greenleaves?text=DappaUhuy&apikey=beta">GreenLeaves Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/harrypotter?text=DappaUhuy&apikey=beta">HarryPotter Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/lolbanner?text=DappaUhuy&apikey=beta">LolBanner Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/glitch?text1=Dappa&text2=Uhuy&apikey=beta">GlitchText</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/8bit?text1=Dappa&text2=Uhuy&apikey=beta">8Bit Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photooxy/pubg?text1=Dappa&text2=Uhuy&apikey=beta">Pubg Text</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-textpro" aria-expanded="false" aria-controls="ui-textpro">
+              <span class="menu-title">Textpro API</span>
+              <i class="menu-arrow"></i>
+              <i class="mdi mdi-textbox menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-textpro">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/bokeh?text=DappaUhuy&apikey=beta">Bokeh Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/brokenglass?text=DappaUhuy&apikey=beta">BrokenGlass Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/artpapercut?text=DappaUhuy&apikey=beta">ArtPaperCut Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/neondevil?text=DappaUhuy&apikey=beta">NeonDevil Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/3dunderwater?text=DappaUhuy&apikey=beta">3D UnderWater Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/bearlogo?text=DappaUhuy&apikey=beta">BearLogo Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/biscuit?text=DappaUhuy&apikey=beta">Biscuit Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/abstragold?text=DappaUhuy&apikey=beta">AbstraGold Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/rusymetal?text=DappaUhuy&apikey=beta">RusyMetal Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/fruitjuice?text=DappaUhuy&apikey=beta">FruitJuice Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/icecold?text=DappaUhuy&apikey=beta">IceCold Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/marble?text=DappaUhuy&apikey=beta">Marble Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/horror?text=DappaUhuy&apikey=beta">Horror Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/plasticbagdrug?text=DappaUhuy&apikey=beta">PlasticBagDrug Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/honey?text=DappaUhuy&apikey=beta">Honey Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/christmast?text=DappaUhuy&apikey=beta">Crismast Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/breakwall?text=DappaUhuy&apikey=beta">BreakWall Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/dropwater?text=DappaUhuy&apikey=beta">DropWater Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/greenneon?text=DappaUhuy&apikey=beta">GreenNeon Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/wood?text=DappaUhuy&apikey=beta">Wood Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/metalrainbow?text=DappaUhuy&apikey=beta">MetalRainbow Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/purplegem?text=DappaUhuy&apikey=beta">PurpleGem Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/shinymetal?text=DappaUhuy&apikey=beta">ShinyMetal Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/yellowjewelry?text=DappaUhuy&apikey=beta">YellowJewelry Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/erodedmetal?text=DappaUhuy&apikey=beta">ErodedMetal Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/bronzeglitter?text=DappaUhuy&apikey=beta">BronzeGlitter Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/bluegem?text=DappaUhuy&apikey=beta">BlueGem Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/bluemetal?text=DappaUhuy&apikey=beta">BlueMetal Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/3dglowing?text=DappaUhuy&apikey=beta">3D Glowing Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/wonderfulgraffiti?text=DappaUhuy&apikey=beta">WonderfulGraffiti Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/futuristic?text=DappaUhuy&apikey=beta">Futuristic Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/snow?text=DappaUhuy&apikey=beta">Snow Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/cloud?text=DappaUhuy&apikey=beta">Cloud Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/luxurygold?text=DappaUhuy&apikey=beta">LuxuryGold Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/blackpink?text=DappaUhuy&apikey=beta">Blackpink Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/cloud2?text=DappaUhuy&apikey=beta">Cloud 2 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/summerbeach?text=DappaUhuy&apikey=beta">SummerBeach Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/writing?text=DappaUhuy&apikey=beta">Writing Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/engraved3d?text=DappaUhuy&apikey=beta">Emgraved 3D Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/summery?text=DappaUhuy&apikey=beta">Summery Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/3dglue?text=DappaUhuy&apikey=beta">3D Glue Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/metaldark?text=DappaUhuy&apikey=beta">MetalDark Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/neonlight?text=DappaUhuy&apikey=beta">NeonLight Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/minion?text=DappaUhuy&apikey=beta">Minion Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/holographic?text=DappaUhuy&apikey=beta">Holograpic Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/metalpurple?text=DappaUhuy&apikey=beta">MetalPurple Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/deluxesilver?text=DappaUhuy&apikey=beta">DeluxeSilver Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/glosycarbon?text=DappaUhuy&apikey=beta">GlosyCarbon Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/fabric?text=DappaUhuy&apikey=beta">Fabric Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/neon?text=DappaUhuy&apikey=beta">Neon Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/newyear?text=DappaUhuy&apikey=beta">NewYear Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/newyear2?text=DappaUhuy&apikey=beta">NewYear2 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/xmascards?text=DappaUhuy&apikey=beta">XmasCards Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/blood?text=DappaUhuy&apikey=beta">Blood Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/halloween?text=DappaUhuy&apikey=beta">Halloween Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/logojoker?text=DappaUhuy&apikey=beta">LogoJoker Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/wicker?text=DappaUhuy&apikey=beta">Wicker Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/naturalleaves?text=DappaUhuy&apikey=beta">NaturalLeaves Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/fireworksparkle?text=DappaUhuy&apikey=beta">FireworkSparkle Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/skeleton?text=DappaUhuy&apikey=beta">Skeleton Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/steel?text=DappaUhuy&apikey=beta">Steel Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/ultragloss?text=DappaUhuy&apikey=beta">UltraGloss Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/denim?text=DappaUhuy&apikey=beta">Denim Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/decorategreen?text=DappaUhuy&apikey=beta">DecorateGreen Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/rock?text=DappaUhuy&apikey=beta">Rock Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/lava?text=DappaUhuy&apikey=beta">Lava Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/yellowglass?text=DappaUhuy&apikey=beta">YellowGlass Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/purpleshiny?text=DappaUhuy&apikey=beta">PurpleShiny Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/captainamerica?text=DappaUhuy&apikey=beta">CaptainAmerica Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/robot?text=DappaUhuy&apikey=beta">Robot Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/rainbowequalizer?text=DappaUhuy&apikey=beta">RainbowEqualizer Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/toxic?text=DappaUhuy&apikey=beta">Toxic Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/pinksparkling?text=DappaUhuy&apikey=beta">PinkSparkling Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/chocolatecake?text=DappaUhuy&apikey=beta">ChocolateCake Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/pupleglass?text=DappaUhuy&apikey=beta">PurpleGlass Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/strawberry?text=DappaUhuy&apikey=beta">Strawberry Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/koifish?text=DappaUhuy&apikey=beta">KoiFish Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/bread?text=DappaUhuy&apikey=beta">Bread Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/matrixstyle?text=DappaUhuy&apikey=beta">MatixStyle Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/horrorblood?text=DappaUhuy&apikey=beta">HorrorBlood Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/neonlight2?text=DappaUhuy&apikey=beta">NeonLight 2 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/3dbox?text=DappaUhuy&apikey=beta">3D Box Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/neon2?text=DappaUhuy&apikey=beta">Neon 2 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/roadwarning?text=DappaUhuy&apikey=beta">RoadWarning Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/greenhorror?text=DappaUhuy&apikey=beta">GreenHorror Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/transformer?text=DappaUhuy&apikey=beta">Transformer Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/berry?text=DappaUhuy&apikey=beta">Berry Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/thunder?text=DappaUhuy&apikey=beta">Thunder2 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/magmahot?text=DappaUhuy&apikey=beta">MagmaHot Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/3dstone?text=DappaUhuy&apikey=beta">3D Stone Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/3dneonlight?text=DappaUhuy&apikey=beta">3D NeonLight Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/harrypotter?text=DappaUhuy&apikey=beta">HarryPotter Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/embossed?text=DappaUhuy&apikey=beta">Embossed Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/fiction?text=DappaUhuy&apikey=beta">Fiction Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/layered?text1=Dappa&text2=Uhuy&apikey=beta">Layered Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/8bit?text1=Dappa&text2=Uhuy&apikey=beta">8 Bit Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/vintagestyle?text1=Dappa&text2=Uhuy&apikey=beta">VintageStyle Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/space3d?text1=Dappa&text2=Uhuy&apikey=beta">Space 3D Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/glitch?text1=Dappa&text2=Uhuy&apikey=beta">Glitch Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/glitch2?text1=Dappa&text2=Uhuy&apikey=beta">Glitch2 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/stone?text1=Dappa&text2=Uhuy&apikey=beta">Stone Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/pornhub?text1=Dappa&text2=Uhuy&apikey=beta">Pornhub Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/avengerslogo?text1=Dappa&text2=Uhuy&apikey=beta">AvengersLogo Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/coolgraffiti?text1=Dappa&text2=Uhuy&apikey=beta">CoolGraffiti Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/marvelstudio?text1=Dappa&text2=Uhuy&apikey=beta">MarvelStudio Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/marvelstudio2?text1=Dappa&text2=Uhuy&apikey=beta">MarvelStudio 2 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/lionlogo?text1=Dappa&text2=Uhuy&apikey=beta">LionLogo Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/wallgraffiti?text1=Dappa&text2=Uhuy&apikey=beta">WallGraffiti Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/blackwhite?text1=Dappa&text2=Uhuy&apikey=beta">BlackWhite Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/ninjalogo?text1=Dappa&text2=Uhuy&apikey=beta">NinjaLogo Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/textpro/3dsteel?text1=Dappa&text2=Uhuy&apikey=beta">3D Steel Text</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-ephoto" aria-expanded="false" aria-controls="ui-ephoto">
+              <span class="menu-title">Ephoto API</span>
+              <i class="menu-arrow"></i>
+              <i class="mdi mdi-marker menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-ephoto">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/neondevil?text=DappaUhuy&apikey=beta">NeonDevil Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/3dshiny?text=DappaUhuy&apikey=beta">3DShiny Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/zombie3d?text=DappaUhuy&apikey=beta">Zombie3D Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/wordgreen?text=DappaUhuy&apikey=beta">WordGreen Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/cloud?text=DappaUhuy&apikey=beta">Cloud Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/metal?text=DappaUhuy&apikey=beta">Metal Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/neon?text=DappaUhuy&apikey=beta">Neon Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/graffiticolor?text=DappaUhuy&apikey=beta">GraffitiColor Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/lightgalaxy?text=DappaUhuy&apikey=beta">LightGalaxy Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/hotmetalic?text=DappaUhuy&apikey=beta">HotMetalic Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/snake?text=DappaUhuy&apikey=beta">Snake Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/graffiti5?text=DappaUhuy&apikey=beta">Graffiti5 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/graffiti3?text=DappaUhuy&apikey=beta">Graffiti3 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/graffiti?text=DappaUhuy&apikey=beta">Graffiti Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/neon2?text=DappaUhuy&apikey=beta">Neon2 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/thunder?text=DappaUhuy&apikey=beta">Thunder Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/startsnight?text=DappaUhuy&apikey=beta">StartsNight Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/cake?text=DappaUhuy&apikey=beta">Cake Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/writingchalk?text=DappaUhuy&apikey=beta">WritingChalk Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/birthdaycake?text=DappaUhuy&apikey=beta">BirthdayCake Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/3dhologram?text=DappaUhuy&apikey=beta">3DHologram Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/galaxystyle?text=DappaUhuy&apikey=beta">GalaxyStyle Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/lighteffects?text=DappaUhuy&apikey=beta">LightEffects Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/greenbrush?text=DappaUhuy&apikey=beta">GreenBrush Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/cakes?text=DappaUhuy&apikey=beta">Cakes Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/startsnight2?text=DappaUhuy&apikey=beta">StartsNight2 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/glowing?text=DappaUhuy&apikey=beta">Glowing Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/wetglass?text=DappaUhuy&apikey=beta">WetGlass Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/blackpinkneon?text=DappaUhuy&apikey=beta">BlackpinkNeon Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/3dcrack?text=DappaUhuy&apikey=beta">3DCrack Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/3dunderwater?text=DappaUhuy&apikey=beta">3DUnderwater Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/blackpink?text=DappaUhuy&apikey=beta">Blackpink Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/bearlogo?text=DappaUhuy&apikey=beta">BearLogo Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/graffiti2?text=DappaUhuy&apikey=beta">Graffiti2 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/watercolor?text=DappaUhuy&apikey=beta">WaterColor Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/clouds?text=DappaUhuy&apikey=beta">Clouds Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/pubgmascot?text=DappaUhuy&apikey=beta">PubgMascot Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/summerbeach?text=DappaUhuy&apikey=beta">SummerBeach Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/neonlight?text=DappaUhuy&apikey=beta">NeonLight Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/summerbeach2?text=DappaUhuy&apikey=beta">SummerBeach2 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/1917?text=DappaUhuy&apikey=beta">1927 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/glow?text=DappaUhuy&apikey=beta">Glow Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/wooden3d?text=DappaUhuy&apikey=beta">Wooden3D Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/galaxy?text=DappaUhuy&apikey=beta">Galaxy Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/galaxybat?text=DappaUhuy&apikey=beta">GalaxyBat Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/brokenglass?text=DappaUhuy&apikey=beta">BrokenGlass Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/artpapercut?text=DappaUhuy&apikey=beta">ArtPaperCut Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/paulscholes?text1=Dappa&text2=7&apikey=beta">PaulScholes Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/tiktok?text1=Dappa&text2=Uhuy&apikey=beta">Tiktok Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/avengers?text1=Dappa&text2=Uhuy&apikey=beta">Avengers Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/3dwood?text1=Dappa&text2=Uhuy&apikey=beta">3DWood Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/graffiti4?text1=Dappa&text2=Uhuy&apikey=beta">Graffiti4 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/graffiti6?text1=Dappa&text2=Uhuy&apikey=beta">Graffiti6 Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/multicolor3d?text1=Dappa&text2=Uhuy&apikey=beta">MultiColor3D Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/realisticvintage?text1=Dappa&text2=Uhuy&apikey=beta">RealisticVintage Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/pornhub?text1=Dappa&text2=Uhuy&apikey=beta">Pornhub Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/juventus?text1=Dappa&text2=Uhuy&apikey=beta">Juventus Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/ephoto/captainamerica?text1=Dappa&text2=7&apikey=beta">CaptainAmerica Text</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-funia" aria-expanded="false" aria-controls="ui-funia">
+              <span class="menu-title">Photofunia API</span>
+              <i class="menu-arrow"></i>
+              <i class="mdi mdi-pencil menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-funia">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/christmas?text=DappaUhuy&apikey=beta">Christmas Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/cemeterygates?text=DappaUhuy&apikey=beta">CemeteryGates Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/planebanner?text=DappaUhuy&apikey=beta">PlaneBanner Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/lovelock?text=DappaUhuy&apikey=beta">LoveLock Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/fortunecookie?text=DappaUhuy&apikey=beta">FortuneCookie Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/pendant?text=DappaUhuy&apikey=beta">Pendant Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/airballoon?text=DappaUhuy&apikey=beta">AirBalloon Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/einstein?text=DappaUhuy&apikey=beta">Einstein Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/rugbyball?text=DappaUhuy&apikey=beta">RugbyBall Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/lightwriting?text=DappaUhuy&apikey=beta">LightWriting Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/blinkinglights?text=DappaUhuy&apikey=beta">BlinkingLights Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/rustywriting?text=DappaUhuy&apikey=beta">RustyWriting Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/beachsign?text=DappaUhuy&apikey=beta">BeachSign Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/denimembroidery?text=DappaUhuy&apikey=beta">DenimEmbroidery Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/bracelet?text=DappaUhuy&apikey=beta">Bracelet Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/nightmare?text=DappaUhuy&apikey=beta">NightMare Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/neonsign?text=DappaUhuy&apikey=beta">NeonSign Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/lightgraffiti?text=DappaUhuy&apikey=beta">LightGraffiti Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/chalkboard?text1=Dappa&text2=Uhuy&apikey=beta">ChalkBoard Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/airline?text1=Dappa&text2=Uhuy&apikey=beta">Airline Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/surfingboard?text1=Dappa&text2=Uhuy&apikey=beta">SurfingBoard Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/neonwriting?text1=Dappa&text2=Uhuy&apikey=beta">NeonWriting Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/watercolor?text1=Dappa&text2=Uhuy&apikey=beta">WaterColor Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/glassbauble?text1=Dappa&text2=Uhuy&apikey=beta">GlassBauble Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/footballplayer?text1=Dappa&text2=18&apikey=beta">FootballPlayer Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/birthdaycake?text1=Dappa&text2=Uhuy&apikey=beta">BirthdayCake Text</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/photofunia/arrowsigns?text1=Dappa&text2=Uhuy&apikey=beta">ArrowSigns Text</a></li>
+             </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-sosmed" aria-expanded="false" aria-controls="ui-sosmed">
+              <span class="menu-title">Social Media API</span>
+              <i class="menu-arrow"></i>
+              <i class="mdi mdi-laptop menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-sosmed">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/ytmp4?url=https://youtu.be/7KrV0drYfz0&apikey=beta">Youtube (MP4)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/ytmp3?url=https://youtu.be/7KrV0drYfz0&apikey=beta">Youtube (MP3)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/ytmp4v2?url=https://youtu.be/7KrV0drYfz0&apikey=beta">Youtube 2 (MP4)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/ytmp3v2?url=https://youtu.be/7KrV0drYfz0&apikey=beta">Youtube 2 (MP3)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/ytplaymp4?query=madara+vs+5+kage&apikey=beta">Youtube Play (MP4)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/ytplaymp3?query=madara+vs+5+kage&apikey=beta">Youtube Play (MP3)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/ytplaymp4v2?query=madara+vs+5+kage&apikey=beta">Youtube Play 2 (MP4)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/ytplaymp3v2?query=madara+vs+5+kage&apikey=beta">Youtube Play 2 (MP3)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/mediafire?url=http://www.mediafire.com/file/plc19jr6d8bhw4g/smooth-high-realistic.ini/file&apikey=beta">MediaFire</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/tiktoknowm?url=https://vm.tiktok.com/ZSJg1qQUb/&apikey=beta">TikTok (NO WM)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/tiktokwithwm?url=https://vm.tiktok.com/ZSJg1qQUb/&apikey=beta">TikTok (WITH WM)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/igdownload?url=https://www.instagram.com/p/CR_c5QClYWl/?utm_source=ig_web_copy_link&apikey=beta">Instagram Download</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/liriklagu?query=no+smile+zone&apikey=beta">Lirik Lagu</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/ttdownloader?url=https://vm.tiktok.com/ZSJvdkFcr/&apikey=beta">TT Downloader</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/dddtik?url=https://vm.tiktok.com/ZSJvdkFcr/&apikey=beta">DddTik (TikTok)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/keeppost?url=https://www.instagram.com/p/CR_c5QClYWl/?utm_source=ig_web_copy_link&apikey=beta">KeepPost (IG)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/twitter?url=https://twitter.com/futurism/status/882987478541533189&apikey=beta">Twitter Downloader</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/musical?url=https://vm.tiktok.com/ZSJvdkFcr/&apikey=beta">MusicalDown (TikTok)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/tiktokder?url=https://vm.tiktok.com/ZSJvdkFcr/&apikey=beta">TikTokDer (TikTok)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/igstalk?username=scytfdhd._&apikey=beta">Instagram Stalker</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/socialmedia/igstory?username=jessicajane99&apikey=beta">Instagram Story</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-vokal" aria-expanded="false" aria-controls="ui-vokal">
+              <span class="menu-title">Vokal Generator API</span>
+              <i class="menu-arrow"></i>
+              <i class="mdi mdi-font-awesome menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-vokal">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/vokal/hilih?kata=DappaUhuy&apikey=beta">Hilih</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/vokal/halah?kata=DappaUhuy&apikey=beta">Halah</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/vokal/holoh?kata=DappaUhuy&apikey=beta">Holoh</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/vokal/heleh?kata=DappaUhuy&apikey=beta">Heleh</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/vokal/huluh?kata=DappaUhuy&apikey=beta">Huluh</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-berita" aria-expanded="false" aria-controls="ui-berita">
+              <span class="menu-title">Berita API</span>
+              <i class="menu-arrow"></i>
+              <i class="mdi mdi-newspaper menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-berita">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/bcc?apikey=beta">BCC</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/inews?apikey=beta">INewsTV</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/cnn?apikey=beta">CNN</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/metro?apikey=beta">MetroTV</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/tribun?apikey=beta">Tribun</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/daily?apikey=beta">Daily</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/detik?apikey=beta">Detik</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/okezone?apikey=beta">OkeZone</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/cnbc?apikey=beta">CNBC</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/fajar-nasional?apikey=beta">Fajar (NASIONAL)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/fajar-internasional?apikey=beta">Fajar (INTERNASIONAL)</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/kompas?apikey=beta">KompasTV</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/sindo?apikey=beta">Sindo</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/tempo?apikey=beta">Tempo</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/indozone?apikey=beta">IndoZone</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/antara?apikey=beta">Antara</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/republika?apikey=beta">Republika</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/viva?apikey=beta">Viva</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/kontan?apikey=beta">Kontan</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/berita/merdeka?apikey=beta">Merdeka</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-animanga" aria-expanded="false" aria-controls="ui-animanga">
+              <span class="menu-title">Anime & Manga API</span>
+              <i class="menu-arrow"></i>
+              <i class="mdi mdi-cat menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-animanga">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/storyanime?apikey=beta">StoryAnime</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/mal-name?name=attack on titan&apikey=beta">MyAnimeList Name</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/mal-number?number=28891&apikey=beta">MyAnimeList Nomer</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/mal-search?query=naruto&apikey=beta">MyAnimeList Search</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/jurnalotaku?query=isayama&apikey=beta">Jurnal Otaku</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/animasu?query=naruto&apikey=beta">Animasu</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/animeindo?query=naruto&apikey=beta">Anime Indo</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/samehadaku?query=naruto&apikey=beta">Samehadaku</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/animenonton?query=naruto&apikey=beta">Anime Nonton</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/onnime?query=naruto&apikey=beta">Onnime</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/isekaisubs?query=kanojo&apikey=beta">Isekai Subs</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/batchkun?query=naruto&apikey=beta">BatchKun</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/alqanime?query=naruto&apikey=beta">Alqanime</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/hinime?query=naruto&apikey=beta">Hinime</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/drivenime?query=naruto&apikey=beta">DriveNime</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/kusonime?query=boruto&apikey=beta">Kusonime</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/anoboy?query=boruto&apikey=beta">Anoboy</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/quotesanime?apikey=beta">Quotes Anime</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/anime/tebakwaifu?apikey=beta">Tebak Waifu</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/manga/komiku?query=naruto&apikey=beta">Komiku</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/manga/animeplanet?query=naruto&apikey=beta">AnimePlanet</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/manga/komikfox?query=naruto&apikey=beta">KomikFox</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/manga/komikstation?query=naruto&apikey=beta">KomikStation</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/manga/mangaku?query=naruto&apikey=beta">Mangaku</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/manga/kiryuu?query=naruto&apikey=beta">Kiryuu</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/manga/klikmanga?query=naruto&apikey=beta">KlikManga</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-nsfwsfw" aria-expanded="false" aria-controls="ui-nsfwsfw">
+              <span class="menu-title">Nsfw & Sfw API</span>
+              <i class="menu-arrow"></i>
+              <i class="mdi mdi-paw menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-nsfwsfw">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwhentaigif?apikey=beta">Nsfw HentaiGif</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwpussy?apikey=beta">Nsfw Pussy</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwnekogif?apikey=beta">Nsfw NekoGif</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwneko?apikey=beta">Nsfw Neko</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwlesbian?apikey=beta">Nsfw Lesbian</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwkuni?apikey=beta">Nsfw Kuni</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwcumsluts?apikey=beta">Nsfw Cumsluts</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwclassic?apikey=beta">Nsfw Classic</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwboobs?apikey=beta">Nsfw Boobs</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwbj?apikey=beta">Nsfw Bj</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwanal?apikey=beta">Nsfw Anal</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwavatar?apikey=beta">Nsfw Avatar</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwyuri?apikey=beta">Nsfw Yuri</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwtrap?apikey=beta">Nsfw Trap</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwtits?apikey=beta">Nsfw Tits</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwgirlsologif?apikey=beta">Nsfw GirlSoloGif</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwgirlsolo?apikey=beta">Nsfw GirlSolo</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwpussywankgif?apikey=beta">Nsfw PussyWankGif</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwpussyart?apikey=beta">Nsfw PussyArt</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwkemonomimi?apikey=beta">Nsfw Kemonomimi</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwkitsune?apikey=beta">Nsfw Kitsune</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwketa?apikey=beta">Nsfw Keta</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwholo?apikey=beta">Nsfw Holo</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwholoero?apikey=beta">Nsfw HoloEro</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwhentai?apikey=beta">Nsfw Hentai</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwfutanari?apikey=beta">Nsfw Futanari</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwfemdom?apikey=beta">Nsfw Femdom</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwfeetgif?apikey=beta">Nsfw FeetGif</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwerofeet?apikey=beta">Nsfw EroFeet</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwfeet?apikey=beta">Nsfw Feet</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwero?apikey=beta">Nsfw Ero</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwerokitsune?apikey=beta">Nsfw EroKitsune</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwerokemonomimi?apikey=beta">Nsfw EroKemonomimi</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfweroneko?apikey=beta">Nsfw EroNeko</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfweroyuri?apikey=beta">Nsfw EroYuri</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwcumarts?apikey=beta">Nsfw CumArts</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwblowjob?apikey=beta">Nsfw BlowJob</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/nsfw/nsfwspank?apikey=beta">Nsfw Spank</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwsmug?apikey=beta">Sfw Smug</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwbaka?apikey=beta">Sfw Baka</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwtickle?apikey=beta">Sfw Tickle</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwslap?apikey=beta">Sfw Slap</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwpoke?apikey=beta">Sfw Poke</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwpat?apikey=beta">Sfw Pat</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwneko?apikey=beta">Sfw Neko</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwnekogif?apikey=beta">Sfw NekoGif</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwmeow?apikey=beta">Sfw Meow</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwlizard?apikey=beta">Sfw Lizard</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwkiss?apikey=beta">Sfw Kiss</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwhug?apikey=beta">Sfw Hug</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwfoxgirl?apikey=beta">Sfw FixGirl</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwfeed?apikey=beta">Sfw Feed</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwcuddle?apikey=beta">Sfw Cuddle</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwkemonomimi?apikey=beta">Sfw Kemonomimi</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwholo?apikey=beta">Sfw Holo</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwwoof?apikey=beta">Sfw Woof</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwwallpaper?apikey=beta">Sfw Wallpaper</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwgoose?apikey=beta">Sfw Goose</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwgecg?apikey=beta">Sfw Gecg</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwavatar?apikey=beta">Sfw Avatar</a></li>
+                <li class="nav-item"> <a class="nav-link" target="_blank" href="/api/sfw/sfwwaifu?apikey=beta">Sfw Waifu</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-movkar" aria-expanded="false" aria-controls="ui-movkar">
+              <span class="menu-title">Movie & Kartun API</span>
+              <i class="menu-arrow"></i>
+              <i class="mdi mdi-movie menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-movkar">
+     

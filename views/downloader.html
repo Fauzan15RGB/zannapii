@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
+<meta name="description" content="Membadut" />
+<meta
+  name="robots"
+  content="archive, follow, imageindex, index, odp, snippet, translate"
+/>
+<meta name="author" content="Chipa" />
+<title>Chipa - REST API</title>
+<meta property="og:site_name" name="og:site_name" content="Chipa APIs" />
+<meta property="og:title" name="og:title" content="Chipa - REST API" />
+<meta property="og:url" name="og:url" content="https://chipa.xyz/" />
+<meta
+  property="og:image"
+  name="og:image"
+  content="/views/logo.ico"
+/>
+<meta property="og:description" name="og:description" content="Membadut" />
+<link rel="apple-touch-icon" href="/assets/img/loli.jpg" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" href="/views/logo.ico" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="/assets/img/loli.jpg" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="canonical" href="https://chipa.xyz/" />
+<link
+  href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="/assets/css/nucleo-icons.css" />
+<link rel="stylesheet" href="/assets/css/alli.min.css" />
+<link rel="stylesheet" href="/assets/css/icone.css" />
+<link rel="stylesheet" href="/assets/css/black-dashboard.min.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css"
+  integrity="sha512-DIW4FkYTOxjCqRt7oS9BFO+nVOwDL4bzukDyDtMO7crjUZhwpyrWBFroq+IqRe6VnJkTpRAS6nhDvf0w+wHmxg=="
+  crossorigin="anonymous"
+/>
+
+  </head>
+
+  <body class="sidebar-mini white-content">
+    <div class="wrapper">
+      <div class="sidebar" data="red">
+  <div class="sidebar-wrapper">
+    <div class="logo">
+      <a href="javascript:void(0)" class="simple-text logo-mini"> CH </a>
+      <a href="javascript:void(0)" class="simple-text logo-normal">
+        Chipa-Api
+      </a>
+    </div>
+    <ul class="nav">
+      </li>
+      <li>
+        
+        <a href="/">
+          <i class="fal fa-alien-monster"></i>
+          <p>Docs</p>
+        </a>
+      </li>
+      
+      <hr />
+      </li>
+      <li>
+        
+        <a href="/list?type=muslim">
+          <i class="fal fa-mosque"></i>
+          <p>Muslim</p>
+        </a>
+      </li>
+      </li>
+      <li>
+        
+        <a href="/list?type=anime">
+          <i class="fal fa-rabbit-fast"></i>
+          <p>Anime</p>
+        </a>
+      </li>
+      
+      <li class="active">
+        <a href="/list?type=downloader">
+          <i class="fal fa-download"></i>
+          <p>Download</p>
+        </a>
+      </li>
+      </li>
+      <li>
+        
+        <a href="/list?type=primbon">
+          <i class="far fa-male"></i>
+          <p>Primbon</p>
+        </a>
+      </li>
+      </li>
+      <li>
+        
+        <a href="/list?type=imagemaker">
+          <i class="far fa-images"></i>
+          <p>Image Maker</p>
+        </a>
+      </li>
+      </li>
+        <li>
+          
+          <a href="/list?type=entertainment">
+            <i class="fad fa-flower-tulip"></i>
+            <p>Entertainment</p>
+          </a>
+        </li>
+      </li>
+      <li>
+        
+        <a href="/list?type=other">
+          <i class="far fa-feather"></i>
+          <p>Other</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+      <div class="main-panel">
+        <div class="navbar-minimize-fixed" style="opacity: 0;">
+  <button class="minimize-sidebar btn btn-link btn-just-icon">
+    <i class="tim-icons icon-align-center visible-on-sidebar-regular text-dark"></i>
+    <i class="tim-icons icon-bullet-list-67 visible-on-sidebar-mini text-dark"></i>
+  </button>
+</div>
+<nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent" style="top: 0px;">
+    <div class="container-fluid">
+      <div class="navbar-wrapper">
+        <div class="navbar-minimize d-inline">
+          <button class="minimize-sidebar btn btn-link btn-just-icon" rel="tooltip" data-original-title="Sidebar toggle" data-placement="right" aria-describedby="tooltip723041">
+            <i class="tim-icons icon-align-center visible-on-sidebar-regular"></i>
+            <i class="tim-icons icon-bullet-list-67 visible-on-sidebar-mini"></i>
+          </button>
+        </div>
+        <div class="navbar-toggle d-inline">
+          <button type="button" class="navbar-toggler">
+            <span class="navbar-toggler-bar bar1"></span>
+            <span class="navbar-toggler-bar bar2"></span>
+            <span class="navbar-toggler-bar bar3"></span>
+          </button>
+        </div>
+        <a class="navbar-brand" href="#">Chipa.xyz</a>
+      </div>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-bar navbar-kebab"></span>
+        <span class="navbar-toggler-bar navbar-kebab"></span>
+        <span class="navbar-toggler-bar navbar-kebab"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navigation" style>
+        <ul class="navbar-nav ml-auto text-dark">
+            <li class="nav-item dropdown no-arrow text-dark">
+                <a class="nav-link dropdown-toggle text-dark" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="tim-icons icon-zoom-split text-dark"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-search p-3 shadow animated--grow-in white-color" aria-labelledby="searchDropdown" style="border: none;">
+                    <form class="navbar-search" action="/search" method="GET">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <button class="input-group-text" type="submit">
+                                    <i class="tim-icons icon-zoom-split text-dark"></i>
+                                </button>
+                            </div>
+                            <input type="text" class="form-control text-dark" name="q" placeholder="Search" autocomplete="off" required>
+                        </div>
+                    </form>
+                </div>
+            </li>
+            <li class="dropdown nav-item">
+                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                    <div class="photo">
+                        <img src="/assets/img/lol.png" alt="Profile Photo">
+                    </div>
+                    <b class="caret d-none d-lg-block d-xl-block"></b>
+                    <p class="d-lg-none text-dark">Profile</p>
+                </a>
+                <ul class="dropdown-menu dropdown-navbar dropdown-user">
+                    <div class="dropdown-user-scroll scrollbar-outer ">
+                        <li>
+                            <div class="user-box">
+                                <div class="avatar-lg"><img src="/assets/img/lol.png" alt="image profile" class="avatar-img rounded"></div>
+                                <div class="u-text text-dark">
+                                    <h4></h4>
+                                    <p></p>
+                                    <p class="text-dark"></p>
+                                </div>
+                            </div>
+                        
+                          <li>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item text-dark" href="/profile"><i class="far fa-address-card text-success"></i>&nbsp;My Profile</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item text-dark" href="/logout"><i class="far fa-sign-out text-danger"></i>&nbsp;Logout</a> 
+                          </li>
+                        
+                    </div>
+                </ul>                           
+            </li>
+          <li class="separator d-lg-none"></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+        <div class="content">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Search</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class="text-primary">
+                        <tr>
+                          <th>Feature</th>
+                          <th class="text-center">Method</th>
+                          <!-- <th>Description</th> -->
+                          <th class="text-center">Parameter</th>
+                          <th class="text-center">Status</th>
+                          <th class="text-center">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        
+                        <tr>
+                          <td>Instagram downloader</td>
+                          <td style="color: #00f2c3" class="text-center">
+                            GET
+                          </td>
+                          <td class="text-center">Apikey &amp; Link</td>
+                          <td class="text-center">
+                            <span
+                              class="badge badge-success"
+                              style="color: #27293d"
+                              >ONLINE</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <a
+                              type="button"
+                              class="text-success btn-sm btn-icon"
+                              href="/api/download/ig?link=https://www.instagram.com/p/COUYR-MhAew/?utm_source=ig_web_copy_link&amp;apikey="
+                              target="_blank"
+                              rel="nofollow"
+                              title="Try"
+                            >
+                              <i class="far fa-play"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        
+                        <tr>
+                          <td>Facebook downloader</td>
+                          <td style="color: #00f2c3" class="text-center">
+                            GET
+                          </td>
+                          <td class="text-center">Apikey &amp; Link</td>
+                          <td class="text-center">
+                            <span
+                              class="badge badge-success"
+                              style="color: #27293d"
+                              >ONLINE</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <a
+                              type="button"
+                              class="text-success btn-sm btn-icon"
+                              href="/api/download/fb?link=https://www.facebook.com/alanwalkermusic/videos/277641643524720&amp;apikey="
+                              target="_blank"
+                              rel="nofollow"
+                              title="Try"
+                            >
+                              <i class="far fa-play"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        
+                        <tr>
+                          <td>Joox Search</td>
+                          <td style="color: #00f2c3" class="text-center">
+                            GET
+                          </td>
+                          <td class="text-center">Apikey &amp; Title</td>
+                          <td class="text-center">
+                            <span
+                              class="badge badge-success"
+                              style="color: #27293d"
+                              >ONLINE</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <a
+                              type="button"
+                              class="text-success btn-sm btn-icon"
+                              href="/api/download/joox?title=Snow man&amp;apikey="
+                              target="_blank"
+                              rel="nofollow"
+                              title="Try"
+                            >
+                              <i class="far fa-play"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        
+                        <tr>
+                          <td>Joox Downloader</td>
+                          <td style="color: #00f2c3" class="text-center">
+                            GET
+                          </td>
+                          <td class="text-center">Apikey &amp; Title</td>
+                          <td class="text-center">
+                            <span
+                              class="badge badge-success"
+                              style="color: #27293d"
+                              >ONLINE</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <a
+                              type="button"
+                              class="text-success btn-sm btn-icon"
+                              href="/api/download/jooxdl?title=Snow man&amp;apikey="
+                              target="_blank"
+                              rel="nofollow"
+                              title="Try"
+                            >
+                              <i class="far fa-play"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        
+                        <tr>
+                          <td>Tiktok Downloader</td>
+                          <td style="color: #00f2c3" class="text-center">
+                            GET
+                          </td>
+                          <td class="text-center">Apikey &amp; Title</td>
+                          <td class="text-center">
+                            <span
+                              class="badge badge-success"
+                              style="color: #27293d"
+                              >ONLINE</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <a
+                              type="button"
+                              class="text-success btn-sm btn-icon"
+                              href="/api/tiktok_dl?url=https://www.tiktok.com/@ikoyunichi/video/6967217072703065346?sender_device=pc&amp;sender_web_id=6932014717942695426&amp;is_from_webapp=v1&amp;is_copy_url=0&amp;apikey="
+                              target="_blank"
+                              rel="nofollow"
+                              title="Try"
+                            >
+                              <i class="far fa-play"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        
+                        <tr>
+                          <td>Youtube Mp3</td>
+                          <td style="color: #00f2c3" class="text-center">
+                            GET
+                          </td>
+                          <td class="text-center">Apikey &amp; Title</td>
+                          <td class="text-center">
+                            <span
+                              class="badge badge-success"
+                              style="color: #27293d"
+                              >ONLINE</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <a
+                              type="button"
+                              class="text-success btn-sm btn-icon"
+                              href="/api/ytaudio?id=K_dSSUfXfiU&amp;apikey="
+                              target="_blank"
+                              rel="nofollow"
+                              title="Try"
+                            >
+                              <i class="far fa-play"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        
+                        <tr>
+                          <td>Youtube Video</td>
+                          <td style="color: #00f2c3" class="text-center">
+                            GET
+                          </td>
+                          <td class="text-center">Apikey &amp; Title</td>
+                          <td class="text-center">
+                            <span
+                              class="badge badge-success"
+                              style="color: #27293d"
+                              >ONLINE</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <a
+                              type="button"
+                              class="text-success btn-sm btn-icon"
+                              href="/api/ytvideo?id=https://www.youtube.com/watch?v=K_dSSUfXfiU&amp;apikey="
+                              target="_blank"
+                              rel="nofollow"
+                              title="Try"
+                            >
+                              <i class="far fa-play"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        
+                        <tr>
+                          <td>Youtube Mp3 2</td>
+                          <td style="color: #00f2c3" class="text-center">
+                            GET
+                          </td>
+                          <td class="text-center">Apikey &amp; Title</td>
+                          <td class="text-center">
+                            <span
+                              class="badge badge-success"
+                              style="color: #27293d"
+                              >ONLINE</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <a
+                              type="button"
+                              class="text-success btn-sm btn-icon"
+                              href="/api/download/ytmp3_2?link=https://www.youtube.com/watch?v=K_dSSUfXfiU&amp;apikey="
+                              target="_blank"
+                              rel="nofollow"
+                              title="Try"
+                            >
+                              <i class="far fa-play"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        
+                        <tr>
+                          <td>Youtube Mp4</td>
+                          <td style="color: #00f2c3" class="text-center">
+                            GET
+                          </td>
+                          <td class="text-center">Apikey &amp; Title</td>
+                          <td class="text-center">
+                            <span
+                              class="badge badge-success"
+                              style="color: #27293d"
+                              >ONLINE</span
+                            >
+                          </td>
+                          <td class="text-center">
+                            <a
+                              type="button"
+                              class="text-success btn-sm btn-icon"
+                              href="/api/download/ytmp4?link=https://www.youtube.com/watch?v=K_dSSUfXfiU&amp;apikey="
+                              target="_blank"
+                              rel="nofollow"
+                              title="Try"
+                            >
+                              <i class="far fa-play"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer fixed-bottom">
+          <div class="copyright text-center my-auto">
+  <span>
+    copyright with <i class="fal fa-heart text-danger"></i> by Chipa -
+  </span>
+  <span>
+    <a id="jam">23:04:05</a>
+  </span>
+</div>
+
+        </footer>
+      </div>
+    </div>
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script src="/assets/js/core/jquery.min.js"></script>
+    <script src="/assets/js/core/popper.min.js"></script>
+    <script src="/assets/js/core/bootstrap.min.js"></script>
+    <script src="/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="/assets/js/plugins/bootstrap-notify.js"></script>
+    <script src="/assets/js/black-dashboard.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js"
+      integrity="sha512-OmBbzhZ6lgh87tQFDVBHtwfi6MS9raGmNvUNTjDIBb/cgv707v9OuBVpsN6tVVTLOehRFns+o14Nd0/If0lE/A=="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

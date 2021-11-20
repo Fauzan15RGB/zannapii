@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://freitasrayani.github.io/404-error-page/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+    <title>Rafa REST API</title>
+</head>
+<body>
+    <div class="container">
+        <div class="div-dois">
+        <h1 class="title"> </h1>
+        <img class="floating-ochaco" src="https://freitasrayani.github.io/404-error-page/.//img/floating-ochaco-cut.jpg" alt="">
+        <h2 class="page-not-found" >Welcome To Rafa Rest APIs</h2>
+        <p class="sorry-txt">API STATUS : ONLINE</p>
+        <a href="/api"> <button class="btn">Read docs</button></a>
+        </div>
+    
+    <footer class="footer-box">
+        <ul class="list-link">
+            <li class="github-list">
+                <a class="github-link" href="https://github.com/MurphyBot" target="_blank">
+                    <img title="Github" class="imge" src="https://freitasrayani.github.io/404-error-page/.//img/github.svg" alt="Github icon">
+                </a>
+            </li>
+            <li class="youtube-list">
+                <a class="youtube-link" href="https://youtube.com/channel/UCzpsJxweXJUr-dhyA5DF6fQ" target="_blank">
+                    <img title="youtube" class="imge" src="https://telegra.ph/file/81a333a5ca9f0fad4e56e.jpg" alt="Youtube icon">
+                </a>
+            </li>
+            <li class="whatsapp-list">
+                <a class="whatsapp-link" href="https://wa.me/6285861870154" target="_blank">
+                    <img title="Whatsapp" class="imge" src="https://telegra.ph/file/95d27956de162c38ac6a9.jpg" alt="Whatsapp icon">
+                </a>
+            </li>
+        </ul>
+    </footer>
+</div>
+</body>
+</html>
